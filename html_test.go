@@ -8,12 +8,17 @@ import (
 func TestHTMLStub(t *testing.T) {
 	Seed(14)
 
-	fmt.Println(HTMLStub())
+	fmt.Println(HTML(&HTMLOptions{}))
 	// Output: <button></button>
 }
-func TestHTMLStub2(t *testing.T) {
-	Seed(10)
+func TestHTMLFields(t *testing.T) {
+	Seed(12)
 
-	fmt.Println(HTMLStub())
-	// Output: <h1></h1>
+	res, _ := HTML(&HTMLOptions{
+		Fields: []Field{
+			{Name: "name", Function: "name"},
+		},
+	})
+	fmt.Println(res)
+	// Output: <h3>Abdullah Roob</h3>
 }
