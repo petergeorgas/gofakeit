@@ -8,7 +8,8 @@ import (
 func TestHTMLStub(t *testing.T) {
 	Seed(14)
 
-	fmt.Println(HTML(&HTMLOptions{}))
+	res, _ := HTML(&HTMLOptions{})
+	fmt.Println(res)
 	// Output: <button></button>
 }
 func TestHTMLFields(t *testing.T) {

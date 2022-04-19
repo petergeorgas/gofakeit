@@ -13,6 +13,8 @@ type HTMLOptions struct {
 
 func HTML(ho *HTMLOptions) (string, error) { return htmlFunc(globalFaker.Rand, ho) }
 
+func (f *Faker) HTML(ho *HTMLOptions) (string, error) { return htmlFunc(f.Rand, ho) }
+
 func htmlFunc(r *rand.Rand, ho *HTMLOptions) (string, error) {
 
 	if ho.Fields == nil { // Fields not provided, generate a stub.
